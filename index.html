@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Earl is a Staff Data Engineer and Architect building cloud-native data platforms, governed transformation systems, and applied AI workflows.">
+  <meta name="theme-color" content="#08110f">
+  <meta property="og:title" content="Earl | Staff Data Engineer and Architect">
+  <meta property="og:description" content="Cloud-native data platforms, governed transformation systems, and applied AI workflows built for production.">
+  <meta property="og:type" content="website">
+  <title>Earl | Staff Data Engineer and Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink-strong: #ecf3ef;
+      --ink: #c1cdc7;
+      --ink-muted: #7f9188;
+      --line: rgba(212, 226, 218, 0.12);
+      --panel: rgba(12, 22, 21, 0.72);
+      --panel-strong: rgba(18, 31, 29, 0.9);
+      --accent: #9dd6a3;
+      --accent-deep: #204835;
+      --accent-warm: #e5c483;
+      --bg: #08110f;
+      --bg-alt: #0d1916;
+      --glow: radial-gradient(circle at top left, rgba(157, 214, 163, 0.16), transparent 36%),
+              radial-gradient(circle at top right, rgba(229, 196, 131, 0.12), transparent 28%),
+              linear-gradient(160deg, #08110f 0%, #0e1715 38%, #0a100e 100%);
+      --shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --content-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--glow);
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, black 42%, transparent 86%);
+      opacity: 0.25;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .shell {
+      width: min(var(--content-width), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 17, 15, 0.64);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .topbar-inner {
+      width: min(var(--content-width), calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink-strong);
+      text-transform: lowercase;
+      letter-spacing: 0.1em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 1rem 1.3rem;
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+    }
+
+    .nav a {
+      transition: color 180ms ease;
+    }
+
+    .nav a:hover {
+      color: var(--ink-strong);
+    }
+
+    main {
+      padding: 2rem 0 4rem;
+    }
+
+    .hero {
+      padding: 2rem 0 1.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(18, 31, 29, 0.9), rgba(10, 18, 16, 0.88));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 2.75rem;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -25% 35%;
+      height: 280px;
+      background: radial-gradient(circle, rgba(157, 214, 163, 0.24), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(157, 214, 163, 0.22);
+      background: rgba(157, 214, 163, 0.08);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.52rem;
+      height: 0.52rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(157, 214, 163, 0.45);
+    }
+
+    h1,
+    h2,
+    h3,
+    .metric-value,
+    .section-kicker {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.03em;
+      color: var(--ink-strong);
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 0.95;
+    }
+
+    .hero-subtitle {
+      max-width: 46rem;
+      margin: 1.4rem 0 0;
+      font-size: 1.08rem;
+      color: var(--ink);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.7rem;
+    }
+
+    .hero-tags span,
+    .stack-list span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--ink);
+      font-size: 0.88rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #7bb990 100%);
+      color: #07110d;
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--ink-strong);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: 1.5rem;
+    }
+
+    .identity-card {
+      display: grid;
+      gap: 1rem;
+      align-content: space-between;
+    }
+
+    .identity-title {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .identity-title strong {
+      color: var(--ink-strong);
+      font-size: 1.15rem;
+    }
+
+    .identity-title span {
+      color: var(--ink-muted);
+      font-size: 0.96rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .metric {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .metric-value {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .metric-label {
+      margin-top: 0.45rem;
+      color: var(--ink-muted);
+      font-size: 0.9rem;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 0.8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.94rem;
+    }
+
+    .meta-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .meta-label {
+      color: var(--ink-muted);
+    }
+
+    .meta-value {
+      text-align: right;
+      color: var(--ink-strong);
+    }
+
+    .section {
+      padding-top: 2.8rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-kicker {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .section-copy {
+      max-width: 44rem;
+      color: var(--ink-muted);
+      margin: 0;
+    }
+
+    .focus-grid,
+    .experience-grid,
+    .project-grid,
+    .cert-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .focus-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .focus-card,
+    .experience-card,
+    .project-card,
+    .cert-card,
+    .contact-card {
+      padding: 1.4rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .focus-card h3,
+    .experience-card h3,
+    .project-card h3,
+    .contact-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.02rem;
+    }
+
+    .focus-card p,
+    .experience-card p,
+    .project-card p,
+    .cert-card p,
+    .contact-card p {
+      margin: 0;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+    }
+
+    .impact-band {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .impact-band .metric {
+      background: rgba(157, 214, 163, 0.08);
+      border-color: rgba(157, 214, 163, 0.18);
+    }
+
+    .experience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .experience-card small,
+    .project-card small,
+    .cert-card small {
+      display: block;
+      margin-bottom: 0.7rem;
+      color: var(--accent-warm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .experience-card ul,
+    .project-card ul {
+      margin: 0.95rem 0 0;
+      padding-left: 1rem;
+      color: var(--ink);
+    }
+
+    .experience-card li,
+    .project-card li {
+      margin-bottom: 0.45rem;
+    }
+
+    .stack-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1rem;
+    }
+
+    .stack-card {
+      padding: 1.5rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .stack-block + .stack-block {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stack-block h3 {
+      margin: 0 0 0.8rem;
+      font-size: 0.98rem;
+      color: var(--ink-strong);
+    }
+
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .project-card a {
+      color: var(--ink-strong);
+    }
+
+    .project-card a:hover {
+      color: var(--accent);
+    }
+
+    .cert-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cert-card {
+      min-height: 100%;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+
+    .contact-card strong {
+      color: var(--ink-strong);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.95rem 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .contact-link:hover {
+      border-color: rgba(157, 214, 163, 0.24);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      padding: 2.25rem 0 1rem;
+      color: var(--ink-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-line {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: rise 700ms ease forwards;
+    }
+
+    .reveal.delay-1 { animation-delay: 80ms; }
+    .reveal.delay-2 { animation-delay: 160ms; }
+    .reveal.delay-3 { animation-delay: 240ms; }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .focus-grid,
+      .experience-grid,
+      .stack-layout,
+      .project-grid,
+      .cert-grid,
+      .contact-grid,
+      .impact-band {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 15ch;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero-card,
+      .panel,
+      .stack-card,
+      .focus-card,
+      .experience-card,
+      .project-card,
+      .cert-card,
+      .contact-card {
+        padding: 1.2rem;
+      }
+
+      .hero-card {
+        padding: 1.55rem;
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 13vw, 4rem);
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">earl</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#focus">Focus</a>
+        <a href="#experience">Experience</a>
+        <a href="#stack">Stack</a>
+        <a href="#work">Work</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-grid">
+        <article class="hero-card reveal">
+          <div class="eyebrow">Staff Data Engineer and Architect</div>
+          <h1>Earl builds data systems that can carry real operational weight.</h1>
+          <p class="hero-subtitle">
+            I design cloud-native data platforms, governed transformation systems, and applied AI workflows across high-stakes environments.
+            My work is centered on architecture that is durable, legible, and production-ready, from warehouse design and orchestration to LLM-enabled services and ML-ready data pipelines.
+          </p>
+          <div class="hero-tags">
+            <span>Azure</span>
+            <span>GCP</span>
+            <span>SQL</span>
+            <span>Python</span>
+            <span>Microsoft Fabric</span>
+            <span>BigQuery</span>
+            <span>Vertex AI</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">Selected Work</a>
+            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+          </div>
+        </article>
+
+        <div class="hero-side reveal delay-1">
+          <aside class="panel identity-card">
+            <div class="identity-title">
+              <strong>Platform architect, data engineer, applied AI builder</strong>
+              <span>Nairobi, Kenya</span>
+            </div>
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="metric-value">9+</div>
+                <div class="metric-label">Years building production data systems</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">19</div>
+                <div class="metric-label">Organizations supported through multi-system architecture work</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">150+</div>
+                <div class="metric-label">GB standardized daily into ML-ready datasets</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">25+</div>
+                <div class="metric-label">Legacy analytics workflows consolidated into governed platforms</div>
+              </div>
+            </div>
+          </aside>
+
+          <aside class="panel reveal delay-2">
+            <ul class="meta-list">
+              <li>
+                <span class="meta-label">Current role</span>
+                <span class="meta-value">Staff-level data engineering and architecture leadership</span>
+              </li>
+              <li>
+                <span class="meta-label">Primary domains</span>
+                <span class="meta-value">Data platforms, analytics engineering, LLM systems, and production AI delivery</span>
+              </li>
+              <li>
+                <span class="meta-label">Operating style</span>
+                <span class="meta-value">Governed, reproducible, architecture-first</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="focus">
+      <div class="section-head">
+        <div>
+          <h2 class="section-kicker">What I do</h2>
+          <p class="section-copy">
+            I work at the layer where data engineering, platform architecture, and applied AI have to become operational systems rather than isolated prototypes.
+          </p>
+        </div>
+      </div>
+      <div class="focus-grid">
+        <article class="focus-card reveal">
+          <h3>Data platform architecture</h3>
+          <p>I design warehouse and lakehouse architectures that unify fragmented systems into governed, reusable data products for reporting, modeling, and downstream applications.</p>
+        </article>
+        <article class="focus-card reveal delay-1">
+          <h3>Cloud-native pipelines</h3>
+          <p>I build batch and streaming pipelines across Azure and GCP with a bias toward maintainability, observability, and reproducibility under real operational load.</p>
+        </article>
+        <article class="focus-card reveal delay-2">
+          <h3>Applied AI systems</h3>
+          <p>I work on retrieval, inference, and LLM-enabled services where clean data interfaces, containerized delivery, and production discipline matter as much as model choice.</p>
+        </article>
+        <article class="focus-card reveal delay-3">
+          <h3>Governed transformation</h3>
+          <p>I translate domain-heavy data into auditable SQL and Python transformation systems that can be versioned, reasoned about, and rerun without ambiguity.</p>
+        </article>
+      </div>
+      <div class="impact-band">
+        <div class="metric reveal">
+          <div class="metric-value">60%</div>
+          <div class="metric-label">Reduction in downstream data errors through governance, lineage, and validation frameworks</div>
+        </div>
+        <div class="metric reveal delay-1">
+          <div class="metric-value">2,000+</div>
+          <div class="metric-label">Data engineering submissions evaluated through automated scoring infrastructure</div>
+        </div>
+        <div class="metric reveal delay-2">
+          <div class="metric-value">3,000+</div>
+          <div class="metric-label">End users supported by reusable data models and reporting layers</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="experience">
+      <div class="section-head">
+        <div>
+          <h2 class="section-kicker">Experience</h2>
+          <p class="section-copy">
+            My work spans platform modernization, large-scale transformation systems, and AI-enabled engineering infrastructure.
+          </p>
+        </div>
+      </div>
+      <div class="experience-grid">
+        <article class="experience-card reveal">
+          <small>Current</small>
+          <h3>Distributed platform and AI architecture</h3>
+          <p>
+            Designed distributed data and AI architecture that combines secure processing, cloud orchestration, and production-grade service integration across complex multi-system environments.
+          </p>
+          <ul>
+            <li>Engineered cross-cloud ingestion and transformation patterns spanning Azure and GCP.</li>
+            <li>Standardized more than 150 GB of operational data daily into ML-ready lakehouse structures.</li>
+            <li>Integrated LLM inference services through secure, containerized APIs.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card reveal delay-1">
+          <small>Architecture and delivery</small>
+          <h3>Enterprise platform modernization</h3>
+          <p>
+            Built warehouse and lake architectures that replaced fragmented analytics landscapes with governed, automated, and audit-ready data systems.
+          </p>
+          <ul>
+            <li>Consolidated more than 25 legacy analytics workflows into a central platform.</li>
+            <li>Cut manual reporting cycles from weeks to hours through automated ingestion and transformation pipelines.</li>
+            <li>Established lineage, quality, and governance controls that materially reduced downstream reporting error.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card reveal delay-2">
+          <small>Applied engineering</small>
+          <h3>Assessment and execution infrastructure</h3>
+          <p>
+            Built containerized scoring and validation systems to evaluate large volumes of technical submissions under controlled and reproducible conditions.
+          </p>
+          <ul>
+            <li>Designed isolated execution environments for ETL, SQL, and API-based assessments.</li>
+            <li>Implemented reproducible scoring logic and performance benchmarking.</li>
+            <li>Delivered a reusable evaluation platform suitable for repeated technical review cycles.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card reveal delay-3">
+          <small>Earlier foundation</small>
+          <h3>Analytics systems built from the ground up</h3>
+          <p>
+            Built centralized analytics capability from the ground up by turning disconnected operational systems into scheduled, queryable, and decision-supporting data infrastructure.
+          </p>
+          <ul>
+            <li>Developed SQL- and Python-driven ETL systems for repeatable analytics delivery.</li>
+            <li>Designed reporting layers that supported budget visibility at substantial annual scale.</li>
+            <li>Established the foundational patterns that still shape how I build today: clarity, structure, and disciplined automation.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="stack">
+      <div class="section-head">
+        <div>
+          <h2 class="section-kicker">Stack</h2>
+          <p class="section-copy">
+            The center of gravity is strong SQL, production Python, and cloud-native data services, with AI and platform tooling layered in where they genuinely improve the system.
+          </p>
+        </div>
+      </div>
+      <div class="stack-layout">
+        <article class="stack-card reveal">
+          <div class="stack-block">
+            <h3>Languages and implementation</h3>
+            <div class="stack-list">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>T-SQL</span>
+              <span>PostgreSQL</span>
+              <span>PySpark</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>FastAPI</span>
+              <span>Bash</span>
+            </div>
+          </div>
+          <div class="stack-block">
+            <h3>Cloud, data, and platform systems</h3>
+            <div class="stack-list">
+              <span>Azure Synapse</span>
+              <span>Microsoft Fabric</span>
+              <span>ADLS</span>
+              <span>BigQuery</span>
+              <span>Vertex AI</span>
+              <span>Databricks</span>
+              <span>Delta Lake</span>
+              <span>dbt</span>
+              <span>Apache Airflow</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="stack-card reveal delay-1">
+          <div class="stack-block">
+            <h3>Architecture and operations</h3>
+            <div class="stack-list">
+              <span>Lakehouse architecture</span>
+              <span>Dimensional modeling</span>
+              <span>Semantic layer design</span>
+              <span>Data validation</span>
+              <span>Lineage and metadata</span>
+              <span>Access control design</span>
+              <span>CI/CD</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+            </div>
+          </div>
+          <div class="stack-block">
+            <h3>Applied AI and analytics</h3>
+            <div class="stack-list">
+              <span>Production LLM deployment</span>
+              <span>Model Garden</span>
+              <span>Feature engineering</span>
+              <span>Time-aware transformations</span>
+              <span>Inference API integration</span>
+              <span>Dataset versioning</span>
+              <span>Power BI</span>
+              <span>Metric standardization</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="work">
+      <div class="section-head">
+        <div>
+          <h2 class="section-kicker">Selected public work</h2>
+          <p class="section-copy">
+            A portion of my work is public. Much of the rest lives in private repositories or internal environments where the systems are operational, client-facing, or commercially sensitive.
+          </p>
+        </div>
+      </div>
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <small>Language tooling</small>
+          <h3><a href="https://github.com/earlofkenya/langextract" target="_blank" rel="noreferrer">langextract</a></h3>
+          <p>Work around language-focused extraction and applied NLP utility, aimed at making unstructured text more usable downstream.</p>
+        </article>
+        <article class="project-card reveal delay-1">
+          <small>Medical AI</small>
+          <h3><a href="https://github.com/earlofkenya/medgemma" target="_blank" rel="noreferrer">medgemma</a></h3>
+          <p>Medical foundation-model experimentation with an emphasis on practical application and system integration rather than isolated demos.</p>
+        </article>
+        <article class="project-card reveal delay-2">
+          <small>Multimodal modeling</small>
+          <h3><a href="https://github.com/earlofkenya/medsiglip" target="_blank" rel="noreferrer">medsiglip</a></h3>
+          <p>Multimodal medical-model exploration focused on representation quality and downstream usefulness.</p>
+        </article>
+        <article class="project-card reveal">
+          <small>Cloud integration</small>
+          <h3><a href="https://github.com/earlofkenya/azure-functions-microsoftgraph-extension" target="_blank" rel="noreferrer">azure-functions-microsoftgraph-extension</a></h3>
+          <p>Integration work around Azure Functions and Microsoft Graph in a production-minded cloud engineering context.</p>
+        </article>
+        <article class="project-card reveal delay-1">
+          <small>Retrieval systems</small>
+          <h3><a href="https://github.com/earlofkenya/LightwheightRAG" target="_blank" rel="noreferrer">LightwheightRAG</a></h3>
+          <p>Lightweight retrieval-augmented generation work with a bias toward compact, usable implementation.</p>
+        </article>
+        <article class="project-card reveal delay-2">
+          <small>Technical profile</small>
+          <h3><a href="https://github.com/earlofkenya/earl" target="_blank" rel="noreferrer">earl</a></h3>
+          <p>A concise public profile repository that frames the engineering and architecture direction behind the broader body of work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="credentials">
+      <div class="section-head">
+        <div>
+          <h2 class="section-kicker">Credentials</h2>
+          <p class="section-copy">
+            Formal credentials matter less than shipping systems well, but they do reflect consistent depth across modern data and analytics platforms.
+          </p>
+        </div>
+      </div>
+      <div class="cert-grid">
+        <article class="cert-card reveal">
+          <small>Microsoft</small>
+          <p>Azure Databricks Data Engineer</p>
+        </article>
+        <article class="cert-card reveal delay-1">
+          <small>Microsoft</small>
+          <p>Fabric Data Engineer</p>
+        </article>
+        <article class="cert-card reveal delay-2">
+          <small>Microsoft</small>
+          <p>Fabric Analytics Engineer</p>
+        </article>
+        <article class="cert-card reveal">
+          <small>Microsoft</small>
+          <p>Power BI Data Analyst</p>
+        </article>
+        <article class="cert-card reveal delay-1">
+          <small>CompTIA</small>
+          <p>DataX</p>
+        </article>
+        <article class="cert-card reveal delay-2">
+          <small>Process and quality</small>
+          <p>Six Sigma Black Belt</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="contact">
+      <div class="section-head">
+        <div>
+          <h2 class="section-kicker">Contact</h2>
+          <p class="section-copy">
+            I am interested in work that demands serious engineering judgment: platform architecture, data modernization, governed transformation systems, applied AI, and cloud-native delivery at scale.
+          </p>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card reveal">
+          <h3>What I bring to a team</h3>
+          <p>
+            Strong architecture discipline, deep hands-on delivery, and a preference for systems that remain understandable after they have grown. I work best where the technical problem is real, the data is imperfect, and the solution has to stand up in production.
+          </p>
+        </article>
+        <article class="contact-card reveal delay-1">
+          <h3>Links</h3>
+          <div class="contact-links">
+            <a class="contact-link" href="https://github.com/earlofkenya" target="_blank" rel="noreferrer">
+              <strong>GitHub</strong>
+              <span>@earlofkenya</span>
+            </a>
+            <a class="contact-link" href="https://github.com/earlofkenya?tab=repositories" target="_blank" rel="noreferrer">
+              <strong>Repositories</strong>
+              <span>Selected public engineering work</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-line">
+      Earl
+    </div>
+  </footer>
+</body>
+</html>
